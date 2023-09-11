@@ -89,6 +89,22 @@ app.post('/cars/:sfId/events', (req, res) => {
     res.json({ message: 'Event added to the car successfully', car });
 });
 
+// Route to handle GET requests for a specific car by sfId
+app.get('/cars/:sfId', (req, res) => {
+    const sfId = req.params.sfId;
+
+    // Find the car with the specified sfId
+    const car = cars.find((car) => car.sfId === sfId);
+
+    if (!car) {
+        return res.status(404).json({ error: 'Car not found.' });
+    }
+
+    // Return the car data as JSON response
+    res.json(car);
+});
+
+
 // Start the server on port 3000 (or any port you prefer)
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

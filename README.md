@@ -98,6 +98,35 @@ This is a simple API for managing cars and their production events. It provides 
 }
 ```
 
+### 4. Retrieve a Specific Car
+
+- **Endpoint:** `GET /cars/{:sfId}`
+- **Description:** Get details of a specific car by providing its `sfId`.
+- **Parameters:**
+  - `sfId` (string, required): The unique identifier of the car to retrieve.
+
+```json
+{
+  "sfId": "ABCD12345",
+  "events": [
+    {
+      "label": "Production Started",
+      "type": "start",
+      "description": "Production of the car has begun.",
+      "createdDate": "2023-09-12T12:34:56.789Z"
+    },
+    {
+      "label": "First Parts Delivered",
+      "type": "milestone",
+      "description": "The first batch of parts has been delivered to the production site.",
+      "createdDate": "2023-09-12T13:45:00.123Z"
+    }
+  ]
+}
+```
+
+**Example Request (for retrieving a car with sfId "ABCD12345"):**
+
 ## Error Handling
 
 - The API returns appropriate error responses for missing or invalid parameters, duplicate cars, and non-existent cars.
