@@ -105,6 +105,7 @@ This is a simple API for managing cars and their production events. It provides 
 - **Parameters:**
   - `sfId` (string, required): The unique identifier of the car to retrieve.
 
+**Example Request (for retrieving a car with sfId "ABCD12345"):**
 ```json
 {
   "sfId": "ABCD12345",
@@ -124,8 +125,6 @@ This is a simple API for managing cars and their production events. It provides 
   ]
 }
 ```
-
-**Example Request (for retrieving a car with sfId "ABCD12345"):**
 
 ## Error Handling
 
